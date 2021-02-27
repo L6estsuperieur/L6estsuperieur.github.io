@@ -1,0 +1,41 @@
+span
+{
+	margin: 30%;
+
+	position: relative;
+	bottom: -60px;
+	left: 18px;
+
+	text-align: center;
+}
+
+img#gif
+{
+  display: none;
+}
+
+span:hover #png
+{
+  display: none;
+}
+
+span:hover #gif
+{
+  display: inline;
+}
+
+img#gif:hover
+{
+	display: inline;
+	transform: scale(0.95);
+}
+
+img#gif:active
+{
+	transform: scale(0.8);
+}
+
+body
+{
+  background-color: black;
+}

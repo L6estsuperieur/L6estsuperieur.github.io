@@ -1,0 +1,393 @@
+@font-face
+{
+    font-family: 'titre';
+    src: url('Alkhemikal.ttf');
+}
+
+@font-face
+{
+    font-family: 'para';
+    src: url('SquimFont.ttf');
+}
+
+html:hover
+{
+  cursor: crosshair;
+}
+
+a:hover
+{
+  cursor: crosshair;
+}
+
+a:active
+{
+  cursor: crosshair;
+}
+
+body
+{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background: url("images/bg.jpg");
+  background-size: 130%;
+  position: absolute;
+}
+
+@media only screen and (max-width: 1280px) {
+
+  body
+  {
+    padding: 0;
+    margin: 0;
+    background: url("images/bg.jpg");
+    background-size: 450%;
+    position: absolute;
+  }
+}
+
+body::-webkit-scrollbar
+{
+  width: 4px;
+}
+
+body::-webkit-scrollbar-track
+{
+  background: #021C1E;
+}
+
+body::-webkit-scrollbar-thumb
+{
+  background: #6FB98F;
+}
+
+nav
+{
+  width: 230px;
+}
+
+div.menu nav ul li.case, li.sousmenu
+{
+  position: relative;
+  right: 500px;
+}
+
+/**/
+li.case, li.sousmenu
+{
+  transition: all 0.3s;
+}
+/**/
+nav ul:hover li.case
+{
+  transform: translate(500px);
+}
+nav ul:hover li.sousmenu
+{
+  transform: translate(500px);
+}
+
+#menuaffichage
+{
+  transition: all 0.3s;
+}
+
+nav ul:hover #menuaffichage
+{
+  transform: rotate(180deg);
+}
+
+/*changement de police pour la liste*/
+div.menu nav ul
+{
+  font-family: arial;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*action sur les textes (liens) de la liste*/
+div.menu nav ul li.case a
+{
+  text-decoration: none;
+  color: #6FB98F;
+  /*font-weight: bold;*/
+}
+
+/*actions sur les éléments de la liste sauf caseactions*/
+div.menu nav ul li.case
+{
+  width: 230px;
+  /*padding: 20px;*/
+  background-color: #021C1E;
+  border-bottom: 2px solid #070707;
+}
+
+div.menu nav ul li.case div
+{
+  border-right: 4px solid #6FB98F;
+}
+/* taille de toutes les case (y compris le sous-menu)*/
+div.menu nav ul div
+{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 26px;
+  height: 10px;
+  width: 190px;
+}
+
+/* ^  que 190px parce que padding-left et right = 20px        190 + 40 = 230 */
+
+div.menu nav ul li.case:hover
+{
+  transition: 0.1s;
+  background-color: #ED5752;
+}
+
+div.menu nav ul li.case:hover a
+{
+  transition: 0.1s;
+  color: #FDE3E1;
+}
+
+div.menu ul li#pourremplir div
+{
+  background-color:#021C1E;
+  width: 190px;
+  height: 119.4%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  box-shadow: 7px 0px 5px black;
+  z-index: -1;
+}
+
+
+
+
+/*-----ROTATE QUAND ON CLIQUE-----*/
+
+div.menu nav ul li.case div:active
+{
+  transform: rotate(2deg);
+}
+
+div.menu nav ul li.sousmenu div:active
+{
+  transform: rotate(-2deg);
+}
+
+div.menu nav ul li.sousmenu ul li:active
+{
+  transform: rotate(-1deg);
+}
+/*--------------------------------*/
+
+
+
+
+
+/*-------SOUS-MENU---------------*/
+
+div.menu nav ul ul
+{
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  left: 230px;
+  top: 0px;
+  background-color: #021C1E;
+  border-left: 4px solid #6FB98F;
+  box-shadow: 0px 0px 20px #000000;
+
+  z-index: 5;
+}
+
+div.menu nav ul ul li#boutonsousmenu2
+{
+  border-top: 2px solid #070707;
+}
+
+li.sousmenu
+{
+  border-bottom: 2px solid #070707;
+  color: #6FB98F;
+  z-index: 5;
+}
+
+li.sousmenu div.caseactions
+{
+  border-right: 4px solid #6FB98F;
+}
+
+li.sousmenu a
+{
+  color: #6FB98F;
+  text-decoration: none;
+}
+
+li.sousmenu
+{
+  width: 230px;
+}
+
+/*---changement de couleurs (background + texte) quand 'caseactions:hover'---*/
+
+li.sousmenu div.caseactions:hover
+{
+  background-color: #ED5752;
+  color: #FDE3E1;
+}
+
+
+
+/*---affichage du sous-menu quand 'caseactions:hover'---*/
+
+li.sousmenu:hover ul
+{
+  transition: 0.2s;
+  opacity: 1;
+  visibility: visible;
+  z-index: 5;
+}
+
+
+
+/*---changement de couleurs (background + texte) quand 'élément de la sous-liste:hover'---*/
+
+li.sousmenu ul li:hover div
+{
+  background-color: #ED5752;
+  color: #FDE3E1;
+}
+
+
+
+
+
+
+/*---------------CASE MENU-----------------*/
+i
+{
+  margin-right: 10px;
+}
+
+li#ouverturemenu div
+{
+  color: #6FB98F;
+  background-color: #070707;
+}
+/*----------------------------------------*/
+
+
+
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------*/
+
+audio
+{
+  position: absolute;
+  left: 500px;
+  top: 500px;
+}
+
+
+div#rondclair
+{
+  width: 1000px;
+  height: 800px;
+  background-color: #6FB98F;
+  margin-left: 350px;
+  margin-top: -16.8%;
+
+  border-radius: 80% 50% / 10% 40%;
+
+  box-shadow: 0px 0px 60px black;
+}
+
+div#rondclair h1
+{
+  padding-top: 125px;
+
+  position: relative;
+  left: -30px;
+
+  text-align: center;
+  font-size: 56px;
+  color: #021C1E;
+  font-family: titre;
+
+  opacity: 0.7;
+  transition: all 0.3s;
+}
+
+div#rondclair p
+{
+  padding-top: 25px;
+
+  position: relative;
+  left: 60px;
+
+  font-size: 25px;
+
+  text-align: justify;
+  width: 81%;
+  color: #021C1E;
+  font-family: para;
+
+  opacity: 0.7;
+  transition: all 0.3s;
+}
+
+div#rondclair:hover h1
+{
+  opacity: 1;
+}
+
+div#rondclair:hover p
+{
+  opacity: 1;
+}
+
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------*/
+
+#barrefin
+{
+  width: 1588px;
+  height: 125px;
+  position: absolute;
+  bottom: -214;
+  left: 0;
+  background-color: #3F000F;
+  z-index: -6;
+  text-align: center;
+}
+
+#barrefin div
+{
+  opacity: 0.9;
+
+  border: 2px solid white;
+  border-radius: 10% / 100%;
+  margin-top: 28px;
+  margin-left: 187px;
+
+  display: inline-block;
+  height: 70px;
+  width: 750px;
+}
+
+#barrefin p
+{
+  opacity: 0.9;
+  color: #FFFFFF;
+  font-family: arial;
+  padding-top: 8px;
+
+  display: inline-block;
+  /*border: 2px solid white;*/
+}
