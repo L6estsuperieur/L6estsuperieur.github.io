@@ -10,7 +10,7 @@
     src: url('SquimFont.ttf');
 }
 
-html:hover
+html
 {
   cursor: crosshair;
 }
@@ -30,13 +30,18 @@ body
   padding: 0;
   margin: 0;
   width: 100%;
+  height: 125%;
   background: url("images/bg.jpg");
-  background-size: 130%;
+  background-size: 130vmax;
   position: absolute;
 }
 
+audio
+{
+  display: none;
+}
 @media only screen and (max-width: 1280px) {
-
+/*
   body
   {
     padding: 0;
@@ -44,12 +49,13 @@ body
     background: url("images/bg.jpg");
     background-size: 450%;
     position: absolute;
-  }
+  }*/
 }
 
 body::-webkit-scrollbar
 {
-  width: 4px;
+  height: 1.1vh;
+  width: 1.1vh;
 }
 
 body::-webkit-scrollbar-track
@@ -59,18 +65,23 @@ body::-webkit-scrollbar-track
 
 body::-webkit-scrollbar-thumb
 {
-  background: #6FB98F;
+  background: #3F895F;
+}
+
+body::-webkit-scrollbar-corner
+{
+  background: #021C1E;
 }
 
 nav
 {
-  width: 230px;
+  width: 14.375vmax;
 }
 
 div.menu nav ul li.case, li.sousmenu
 {
   position: relative;
-  right: 500px;
+  right: 31.25vmax;
 }
 
 /**/
@@ -79,13 +90,14 @@ li.case, li.sousmenu
   transition: all 0.3s;
 }
 /**/
+
 nav ul:hover li.case
 {
-  transform: translate(500px);
+  transform: translate(31.25vmax);
 }
 nav ul:hover li.sousmenu
 {
-  transform: translate(500px);
+  transform: translate(31.25vmax);
 }
 
 #menuaffichage
@@ -101,6 +113,7 @@ nav ul:hover #menuaffichage
 /*changement de police pour la liste*/
 div.menu nav ul
 {
+  font-size: 1vmax;
   font-family: arial;
   list-style: none;
   margin: 0;
@@ -117,26 +130,26 @@ div.menu nav ul li.case a
 
 /*actions sur les éléments de la liste sauf caseactions*/
 div.menu nav ul li.case
-{
-  width: 230px;
+{/*
+  width: 14.375vmax;*/
   /*padding: 20px;*/
   background-color: #021C1E;
-  border-bottom: 2px solid #070707;
+  border-bottom: 0.125vmax solid #070707;
 }
 
 div.menu nav ul li.case div
 {
-  border-right: 4px solid #6FB98F;
+  border-right: 0.25vmax solid #6FB98F;
 }
-/* taille de toutes les case (y compris le sous-menu)*/
+/* taille de toutes les case (y compris le sous-menu           y compris #pourremplir)*/
 div.menu nav ul div
 {
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px;
-  padding-bottom: 26px;
-  height: 10px;
-  width: 190px;
+  padding-left: 1.25vmax;
+  padding-right: 1.25vmax;
+  padding-top: 1.25vmax;
+  padding-bottom: 1.625vmax;
+  height: 0.75vmax;
+  width: 11.875vmax;
 }
 
 /* ^  que 190px parce que padding-left et right = 20px        190 + 40 = 230 */
@@ -155,20 +168,25 @@ div.menu nav ul li.case:hover a
 
 div.menu ul li#pourremplir div
 {
+  padding-bottom: 0vmax;
+  padding-top: 13.3125vmax;
+
   background-color:#021C1E;
-  width: 190px;
-  height: 119.4%;
+  width: 11.875vmax;/*
+  height: 119.4%;*/
+  height: 100%;/*
+  min-height: 792px;*/
   position: absolute;
   left: 0px;
   top: 0px;
-  box-shadow: 7px 0px 5px black;
+  box-shadow: 0.4375vmax 0vmax 0.3125vmax black;
   z-index: -1;
 }
 
 
 
 
-/*-----ROTATE QUAND ON CLIQUE-----*/
+/*-----MINIROTATE QUAND ON CLIQUE-----*/
 
 div.menu nav ul li.case div:active
 {
@@ -197,30 +215,30 @@ div.menu nav ul ul
   opacity: 0;
   visibility: hidden;
   position: absolute;
-  left: 230px;
-  top: 0px;
+  left: 14.375vmax;
+  top: 0vmax;
   background-color: #021C1E;
-  border-left: 4px solid #6FB98F;
-  box-shadow: 0px 0px 20px #000000;
+  border-left: 0.25vmax solid #6FB98F;
+  box-shadow: 0vmax 0vmax 1.25vmax #000000;
 
   z-index: 5;
 }
 
 div.menu nav ul ul li#boutonsousmenu2
 {
-  border-top: 2px solid #070707;
+  border-top: 0.125vmax solid #070707;
 }
 
 li.sousmenu
 {
-  border-bottom: 2px solid #070707;
+  border-bottom: 0.125vmax solid #070707;
   color: #6FB98F;
   z-index: 5;
 }
 
 li.sousmenu div.caseactions
 {
-  border-right: 4px solid #6FB98F;
+  border-right: 0.25vmax solid #6FB98F;
 }
 
 li.sousmenu a
@@ -231,7 +249,7 @@ li.sousmenu a
 
 li.sousmenu
 {
-  width: 230px;
+  width: 14.375vmax;
 }
 
 /*---changement de couleurs (background + texte) quand 'caseactions:hover'---*/
@@ -272,7 +290,7 @@ li.sousmenu ul li:hover div
 /*---------------CASE MENU-----------------*/
 i
 {
-  margin-right: 10px;
+  margin-right: 0.625vmax;
 }
 
 li#ouverturemenu div
@@ -287,36 +305,33 @@ li#ouverturemenu div
 
 /*--------------------------------------------------------------------------------------------------------------------------------------------*/
 
-audio
+section /*pour ne pas empiéter sur la case de l'ouverture du menu (gêne pour le hover)*/
 {
-  position: absolute;
-  left: 500px;
-  top: 500px;
+  z-index: -1000;
 }
-
-
 div#rondclair
 {
-  width: 1000px;
-  height: 800px;
+  width: 62.5vmax;
+  height: 50vmax;
   background-color: #6FB98F;
-  margin-left: 350px;
-  margin-top: -16.8%;
+  margin-left: 21.875vmax;
+  margin-top: -17.5vmax;
 
   border-radius: 80% 50% / 10% 40%;
 
-  box-shadow: 0px 0px 60px black;
+  box-shadow: 0vmax 0vmax 3.75vmax black;
 }
 
 div#rondclair h1
 {
-  padding-top: 125px;
+  padding-top: 7.8125vmax; /*125px*/
+  padding-right: 4vmax;
 
-  position: relative;
-  left: -30px;
+  position: relative;/*
+  left: -1.875vmax;*/
 
   text-align: center;
-  font-size: 56px;
+  font-size: 3.5vmax;      /* 3.5% ou 3.5em (la même chose)  =  3.5vw  =  7ch = 3.5vmax ==> 56px*/
   color: #021C1E;
   font-family: titre;
 
@@ -326,15 +341,16 @@ div#rondclair h1
 
 div#rondclair p
 {
-  padding-top: 25px;
+  padding-top: 1.5625vmax;
+  padding-left: 3.75vmax;
 
-  position: relative;
-  left: 60px;
+  position: relative;/*
+  left: 3.75vmax;*/
 
-  font-size: 25px;
+  font-size: 1.5625vmax;
 
   text-align: justify;
-  width: 81%;
+  width: 50vmax;
   color: #021C1E;
   font-family: para;
 
@@ -355,12 +371,13 @@ div#rondclair:hover p
 
 /*--------------------------------------------------------------------------------------------------------------------------------------------*/
 
+
 #barrefin
 {
-  width: 1588px;
-  height: 125px;
+  width: 100%;
+  height: 7.8125vmax;
   position: absolute;
-  bottom: -214;
+  bottom: -13.3125vmax;
   left: 0;
   background-color: #3F000F;
   z-index: -6;
@@ -371,14 +388,14 @@ div#rondclair:hover p
 {
   opacity: 0.9;
 
-  border: 2px solid white;
+  border: 0.125vmax solid white;
   border-radius: 10% / 100%;
-  margin-top: 28px;
-  margin-left: 187px;
+  margin-top: 1.75vmax;
+  margin-left: 11.6875vmax;
 
   display: inline-block;
-  height: 70px;
-  width: 750px;
+  height: 4.375vmax;
+  width: 46.875vmax;
 }
 
 #barrefin p
@@ -386,7 +403,8 @@ div#rondclair:hover p
   opacity: 0.9;
   color: #FFFFFF;
   font-family: arial;
-  padding-top: 8px;
+  padding-top: 0.5vmax;
+  font-size: 1vmax;
 
   display: inline-block;
   /*border: 2px solid white;*/
